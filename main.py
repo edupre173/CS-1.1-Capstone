@@ -11,11 +11,15 @@ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Gen
 You should have received a copy of the GNU General Public License along with this program. If not,
 see <https://www.gnu.org/licenses/>. FOR LICENSE SEE LICENSE.MD """
 
+# Import & Initialize a Turtle object as /t/
 import turtle
-
 t = turtle.Turtle()
+
+# Give the Window a Title
+turtle.title("Joel Machens & Ethan Dupre Present: Ourselves")
 
 t.circle(50)
 
+# Main Loop for Window -- Boilerplate
 window = turtle.Screen()
 window.mainloop()
