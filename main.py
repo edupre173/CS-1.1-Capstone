@@ -22,8 +22,12 @@ t.speed(0)
 turtle.title("Joel Machens & Ethan Dupre Present: Ourselves")
 
 # Print the options for backgrounds and then print the prompt, storing the user input in the variable \bkgd_input\
-print("Backgrounds: Color, Forest, School, Space, Matrix")
-bkgd_input = input("Choose a background: ")
+print("Backgrounds: Colour, Forest, School, Space, Matrix")
+bkgd_input = input("Choose a background: ").lower() # lowercase string so that capitalization doesn't matter
+
+# Validate the variable \bkgd_input\
+if bkgd_input == "colour":
+    colour = input("")
 
 t.circle(50)
 
