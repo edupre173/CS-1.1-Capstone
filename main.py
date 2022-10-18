@@ -14,6 +14,8 @@ see <https://www.gnu.org/licenses/>. FOR LICENSE SEE LICENSE.MD """
 # Import & Initialize a Turtle object as /t/
 import turtle
 t = turtle.Turtle()
+t.hideturtle()
+t.speed(0)
 
 # Give the Window a Title
 turtle.title("Joel Machens & Ethan Dupre Present: Ourselves")
