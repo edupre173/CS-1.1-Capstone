@@ -14,11 +14,16 @@ see <https://www.gnu.org/licenses/>. FOR LICENSE SEE LICENSE.MD """
 # Import & Initialize a Turtle object as /t/
 import turtle
 t = turtle.Turtle()
+# Hides the turtle and sets its speed to 0, aka maximum, for the smoothest possible drawing experience
 t.hideturtle()
 t.speed(0)
 
 # Give the Window a Title
 turtle.title("Joel Machens & Ethan Dupre Present: Ourselves")
+
+# Print the options for backgrounds and then print the prompt, storing the user input in the variable \bkgd_input\
+print("Backgrounds: Color, Forest, School, Space, Matrix")
+bkgd_input = input("Choose a background: ")
 
 t.circle(50)
 
