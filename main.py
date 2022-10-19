@@ -11,7 +11,8 @@ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Gen
 You should have received a copy of the GNU General Public License along with this program. If not,
 see <https://www.gnu.org/licenses/>. FOR LICENSE SEE LICENSE.MD """
 
-# Import & Initialize a Turtle object as /t/
+# Import & Initialize a Turtle object as /t/, as well as importing pathlib for use in backgrounds.
+import pathlib
 import turtle
 
 t = turtle.Turtle()
@@ -31,7 +32,7 @@ if bkgd_input == "colour":
     colour = input("Choose a colour for the background: ")
     turtle.Screen().bgcolor(colour)
 elif bkgd_input == "matrix":
-    turtle.Screen().bgpic("matrix.png")
+    turtle.Screen().bgpic(pathlib.Path("matrix.png").resolve().__str__())
 else:
     print("We're not sure what you meant, drawing default.")
     turtle.Screen().bgcolor("blue")
