@@ -25,12 +25,18 @@ turtle.title("Joel Machens & Ethan Dupre Present: Ourselves")
 
 # Print the options for backgrounds and then print the prompt, storing the user input in the variable \bkgd_input\
 print("Backgrounds: Colour, Forest, School, Space, Matrix")
-bkgd_input = input("Choose a background: ").lower()  # lowercase string so that capitalization doesn't matter
+bkgd_input = input("Choose a background: ").lower().strip(" ")  # lowercase string so that capitalization doesn't matter, and remove whitespace
 
 # Validate the variable \bkgd_input\
 if bkgd_input == "colour":
     colour = input("Choose a colour for the background: ")
     turtle.Screen().bgcolor(colour)
+elif bkgd_input == "forest":
+
+elif bkgd_input == "school":
+
+elif bkgd_input == "space":
+
 elif bkgd_input == "matrix":
     turtle.Screen().bgpic(pathlib.Path("matrix.png").resolve().__str__())
 else:
