@@ -30,6 +30,8 @@ bkgd_input = input("Choose a background: ").lower()  # lowercase string so that 
 if bkgd_input == "colour":
     colour = input("Choose a colour for the background: ")
     turtle.Screen().bgcolor(colour)
+elif bkgd_input == "matrix":
+    turtle.Screen().bgpic("matrix.png")
 else:
     print("We're not sure what you meant, drawing default.")
     turtle.Screen().bgcolor("blue")
