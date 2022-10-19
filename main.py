@@ -23,27 +23,32 @@ t.speed(0)
 # Give the Window a Title
 turtle.title("Joel Machens & Ethan Dupre Present: Ourselves")
 
-# Print the options for backgrounds and then print the prompt, storing the user input in the variable \bkgd_input\
+# Print the options for backgrounds
 print("Backgrounds: Colour, Forest, School, Space, Matrix")
-bkgd_input = input("Choose a background: ").lower().strip(" ")  # lowercase string so that capitalization doesn't matter, and remove whitespace
 
-# Validate the variable \bkgd_input\
+# Prompt the user, storing the user input in the variable \bkgd_input\ &
+# lowercase string so that capitalization doesn't matter, as well as removing whitespace
+bkgd_input = input("Choose a background: ").lower().strip(" ")
+
+# Validate the variable \bkgd_input\ & apply background
 if bkgd_input == "colour":
     colour = input("Choose a colour for the background: ")
     turtle.Screen().bgcolor(colour)
 elif bkgd_input == "forest":
-
+    turtle.Screen().bgpic(pathlib.Path("res/forest.png").resolve().__str__())
 elif bkgd_input == "school":
-
+    turtle.Screen().bgpic(pathlib.Path("res/school.png").resolve().__str__())
 elif bkgd_input == "space":
-
+    turtle.Screen().bgpic(pathlib.Path("res/space.png").resolve().__str__())
 elif bkgd_input == "matrix":
-    turtle.Screen().bgpic(pathlib.Path("matrix.png").resolve().__str__())
+    turtle.Screen().bgpic(pathlib.Path("res/matrix.png").resolve().__str__())
 else:
     print("We're not sure what you meant, drawing default.")
-    turtle.Screen().bgcolor("blue")
 
+t.fillcolor("white")
+t.begin_fill()
 t.circle(50)
+t.end_fill()
 
 # Main Loop for Window -- Boilerplate
 window = turtle.Screen()
