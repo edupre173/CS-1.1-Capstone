@@ -45,10 +45,28 @@ elif bkgd_input == "matrix":
 else:
     print("We're not sure what you meant, drawing default.")
 
+# Draw a head
 t.fillcolor("white")
 t.begin_fill()
-t.circle(50)
+t.circle(40)
 t.end_fill()
+
+# Get ready to draw a body
+t.penup()
+t.fd(50)
+t.rt(90)
+t.fd(40)
+t.pendown()
+
+# Draw a body
+t.seth(90)
+t.begin_fill()
+t.circle(50, 180)
+t.fd(80)
+t.circle(50, 180)
+t.fd(80)
+t.end_fill()
+t.seth(0)
 
 # Main Loop for Window -- Boilerplate
 window = turtle.Screen()
