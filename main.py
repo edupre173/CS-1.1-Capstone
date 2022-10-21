@@ -17,7 +17,7 @@ import turtle
 
 t = turtle.Turtle()
 # Hides the turtle and sets its speed to 0, aka maximum, for the smoothest possible drawing experience
-
+t.hideturtle()
 t.speed(0)
 
 # Give the Window a Title
@@ -45,54 +45,73 @@ elif bkgd_input == "matrix":
 else:
     print("We're not sure what you meant, drawing default.")
 
-# Draw a head
-t.fillcolor("white")
-t.begin_fill()
-t.circle(40)
-t.end_fill()
+t.penup()
+t.goto(-60, 0)
+t.pendown()
+t.setheading(0)
 
-# Get ready to draw a body
-t.penup()
-t.fd(50)
-t.rt(90)
-t.fd(40)
-t.pendown()
+for person in range(2):
+    # Draw a head
+    t.fillcolor("white")
+    t.begin_fill()
+    t.circle(40)
+    t.end_fill()
 
-# Draw a body
-t.seth(90)
-t.begin_fill()
-t.circle(50, 180)
-t.fd(80)
-t.circle(50, 180)
-t.fd(80)
-t.end_fill()
-t.seth(0)
-t.penup()
-t.left(90)
-t.forward(95)
-t.left(90)
-t.forward(70)
-t.pendown()
-t.circle(8)
-t.penup()
-t.right(180)
-t.forward(30)
-t.right(90)
-t.forward(10)
-t.pendown()
-t.circle(8)
-t.penup()
-t.forward(15)
-t.right(90)
-t.forward(30)
-t.left(90)
-t.pendown()
-t.circle(20, 180)
-t.left(90)
-t.forward(40)
-t.penup()
-t.left(90)
-t.forward(200)
+    # Get ready to draw a body
+    t.penup()
+    t.fd(50)
+    t.rt(90)
+    t.fd(40)
+    t.pendown()
+
+    # Draw a body
+    t.seth(90)
+    t.begin_fill()
+    t.circle(50, 180)
+    t.fd(80)
+    t.circle(50, 180)
+    t.fd(80)
+    t.end_fill()
+
+    t.seth(0)
+    t.penup()
+    t.left(90)
+    t.forward(95)
+    t.left(90)
+    t.forward(70)
+    t.pendown()
+
+    # Drawing eyes
+    t.circle(8)
+
+    t.penup()
+    t.right(180)
+    t.forward(30)
+    t.right(90)
+    t.forward(10)
+    t.pendown()
+
+    t.circle(8)
+
+    t.penup()
+    t.forward(15)
+    t.right(90)
+    t.forward(30)
+    t.left(90)
+    t.pendown()
+
+    t.circle(20, 180)
+    t.left(90)
+    t.forward(40)
+    t.penup()
+    t.left(90)
+    t.forward(200)
+
+    # Get ready to draw again.
+    t.seth(0)
+    t.penup()
+    t.goto(60, 0)
+    t.pendown()
 
 # Main Loop for Window -- Boilerplate
 window = turtle.Screen()
