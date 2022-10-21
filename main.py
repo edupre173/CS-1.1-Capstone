@@ -25,9 +25,8 @@ turtle.title("Joel Machens & Ethan Dupre Present: Ourselves")
 
 # Print the options for backgrounds
 print("Backgrounds: Colour, Forest, School, Space, Matrix")
-
 # Prompt the user, storing the user input in the variable \bkgd_input\ &
-# lowercase string so that capitalization doesn't matter, as well as removing whitespace
+# lowercase string and remove whitespace
 bkgd_input = input("Choose a background: ").lower().strip(" ")
 
 # Validate the variable \bkgd_input\ & apply background
@@ -43,19 +42,36 @@ elif bkgd_input == "space":
 elif bkgd_input == "matrix":
     turtle.Screen().bgpic(pathlib.Path("res/matrix.png").resolve().__str__())
 else:
-    print("We're not sure what you meant, drawing default.")
+    print("We're not sure what you meant, drawing nothing.")
 
+# Print the options for styles
+print("Body Styles: Colour, Tuxedo, Cool, Buff")
+# Prompt the user for input on what to draw for the bodies, storing it in \body_style\ &
+# lowercase string and remove whitespace
+body_style = input("Choose a body style: ").lower().strip(" ")
+
+# Validate the variable \body_style\ : if it's valid we don't care, we'll deal with that when we're drawing
+if body_style == "colour":
+    colour = input("Choose a colour for our clothes: ")
+elif body_style != "tuxedo" or "tux" or "cool" or "buff":
+    print("We're not sure what you meant, we'll go with a nice simple noir!")
+    body_style = "colour"
+    colour = "black"
+
+# Set starting position for drawing bodies
 t.penup()
 t.goto(-60, 0)
 t.pendown()
 t.setheading(0)
+t.fillcolor(colour or "black")
 
 for person in range(2):
     # Draw a head
-    t.fillcolor("white")
+    t.fillcolor("#f1cea5")
     t.begin_fill()
     t.circle(40)
     t.end_fill()
+    t.fillcolor(colour or "black")
 
     # Get ready to draw a body
     t.penup()
@@ -82,6 +98,7 @@ for person in range(2):
     t.pendown()
 
     # Drawing eyes
+    t.pencolor("blue")
     t.circle(8)
 
     t.penup()
@@ -100,6 +117,7 @@ for person in range(2):
     t.left(90)
     t.pendown()
 
+    t.pencolor("white")
     t.circle(20, 180)
     t.left(90)
     t.forward(40)
@@ -107,8 +125,7 @@ for person in range(2):
     t.left(90)
     t.forward(200)
     t.pendown()
-    t.circle
-    t.circle(20, 180)
+    t.pencolor("black")
 
     # Get ready to draw again.
     t.seth(0)
