@@ -45,18 +45,15 @@ else:
     print("We're not sure what you meant, drawing nothing.")
 
 # Print the options for styles
-print("Body Styles: Colour, Tuxedo, Cool, Buff")
+print("Body Styles: Cool, Tuxedo, Buff")
 # Prompt the user for input on what to draw for the bodies, storing it in \body_style\ &
 # lowercase string and remove whitespace
 body_style = input("Choose a body style: ").lower().strip(" ")
-
 # Validate the variable \body_style\ : if it's valid we don't care, we'll deal with that when we're drawing
-if body_style == "colour":
-    colour = input("Choose a colour for our clothes: ") or "black"
-elif body_style != "tuxedo" or "tux" or "cool" or "buff":
-    print("We're not sure what you meant, we'll go with a nice simple noir!")
-    body_style = "colour"
-    colour = "black"
+colour = input("Choose a colour for our clothes: ") or "cyan"
+if body_style != "tuxedo" and body_style != "tux" and body_style != "cool" and body_style != "buff":
+    print("We're not sure what you meant! Going with cool.")
+    body_style = "cool"
 
 # Set starting position for drawing bodies
 t.penup()
@@ -125,6 +122,8 @@ for person in range(2):
     t.forward(200)
     t.pendown()
     t.pencolor("black")
+
+
 
     # Get ready to draw again.
     t.seth(0)
