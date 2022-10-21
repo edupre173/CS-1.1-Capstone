@@ -106,6 +106,9 @@ for person in range(2):
     t.penup()
     t.left(90)
     t.forward(200)
+    t.pendown()
+    t.circle
+    t.circle(20, 180)
 
     # Get ready to draw again.
     t.seth(0)
