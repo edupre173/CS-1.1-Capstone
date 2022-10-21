@@ -87,13 +87,12 @@ t.right(90)
 t.forward(30)
 t.left(90)
 t.pendown()
-t.circle(20,180)
+t.circle(20, 180)
 t.left(90)
 t.forward(40)
 t.penup()
 t.left(90)
 t.forward(200)
-
 
 # Main Loop for Window -- Boilerplate
 window = turtle.Screen()
