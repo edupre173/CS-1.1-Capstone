@@ -52,7 +52,7 @@ body_style = input("Choose a body style: ").lower().strip(" ")
 
 # Validate the variable \body_style\ : if it's valid we don't care, we'll deal with that when we're drawing
 if body_style == "colour":
-    colour = input("Choose a colour for our clothes: ")
+    colour = input("Choose a colour for our clothes: ") or "black"
 elif body_style != "tuxedo" or "tux" or "cool" or "buff":
     print("We're not sure what you meant, we'll go with a nice simple noir!")
     body_style = "colour"
@@ -63,7 +63,6 @@ t.penup()
 t.goto(-60, 0)
 t.pendown()
 t.setheading(0)
-t.fillcolor(colour or "black")
 
 for person in range(2):
     # Draw a head
@@ -71,7 +70,7 @@ for person in range(2):
     t.begin_fill()
     t.circle(40)
     t.end_fill()
-    t.fillcolor(colour or "black")
+    t.fillcolor(colour)
 
     # Get ready to draw a body
     t.penup()
