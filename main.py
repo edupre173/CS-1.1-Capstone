@@ -111,6 +111,7 @@ for person in range(2):
         t.pendown()
         t.right(180)
 
+        # Left tie
         t.begin_fill()
         t.right(120)
         t.forward(20)
@@ -127,6 +128,7 @@ for person in range(2):
         t.backward(20)
         t.pendown()
 
+        # Right tie
         t.begin_fill()
         t.right(120)
         t.backward(20)
