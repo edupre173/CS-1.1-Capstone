@@ -94,14 +94,16 @@ for person in range(2):
     t.pendown()
 
     # Check if drawing a Tuxedo, if so, draw it
-    if body_style == "tuxedo":
+    if body_style == "tuxedo" or body_style == "tux":
         # Save current turtle position
         old_position = t.pos()
         old_colour = t.fillcolor()
         if colour == "black":
             t.fillcolor("white")
+            t.pencolor("white")
         else:
             t.fillcolor("black")
+            t.pencolor("black")
 
         t.penup()
         t.left(90)
@@ -134,15 +136,28 @@ for person in range(2):
         t.backward(20)
         t.end_fill()
 
+        # Draw line down body
+        t.right(90)
+        t.penup()
+        t.backward(20)
+        t.right(90)
+        t.backward(10)
+        t.pendown()
+        t.pensize(4)
+        t.forward(150)
+        t.pensize(1)
+
         # Restore turtle position
-        t.left(90)
+        t.left(270)
         t.penup()
         t.setpos(old_position)
         t.fillcolor(old_colour)
+        t.pencolor(old_colour)
         t.pendown()
 
     # Drawing eyes
     t.pencolor("blue")
+
     t.circle(8)
 
     t.penup()
@@ -161,15 +176,20 @@ for person in range(2):
     t.left(90)
     t.pendown()
 
+    # Draw smile
     t.pencolor("white")
+    t.fillcolor("white")
+    t.begin_fill()
     t.circle(20, 180)
     t.left(90)
     t.forward(40)
+    t.end_fill()
     t.penup()
     t.left(90)
     t.forward(200)
     t.pendown()
     t.pencolor("black")
+    t.fillcolor(colour)
 
     # Get ready to draw again.
     t.seth(0)
