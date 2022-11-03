@@ -27,7 +27,7 @@ turtle.title("Joel Machens & Ethan Dupre Present: Ourselves")
 print("Backgrounds: Colour, Forest, School, Space, Matrix")
 # Prompt the user, storing the user input in the variable \bkgd_input\ &
 # lowercase string and remove whitespace
-bkgd_input = input("Choose a background: ").lower().strip(" ")
+bkgd_input = input("Choose a background: ").lower().strip()
 
 # Validate the variable \bkgd_input\ & apply background
 if bkgd_input == "colour":
@@ -42,18 +42,23 @@ elif bkgd_input == "space":
 elif bkgd_input == "matrix":
     turtle.Screen().bgpic(pathlib.Path("res/matrix.png").resolve().__str__())
 else:
-    print("We're not sure what you meant, drawing nothing.")
+    print("We're not sure what you meant, drawing default.")
 
 # Print the options for styles
 print("Body Styles: Cool, Tuxedo, Buff")
 # Prompt the user for input on what to draw for the bodies, storing it in \body_style\ &
 # lowercase string and remove whitespace
-body_style = input("Choose a body style: ").lower().strip(" ")
+body_style = input("Choose a body style: ").lower().strip()
 # Validate the variable \body_style\ : if it's valid we don't care, we'll deal with that when we're drawing
-colour = input("Choose a colour for our clothes: ") or "cyan"
 if body_style != "tuxedo" and body_style != "tux" and body_style != "cool" and body_style != "buff":
-    print("We're not sure what you meant! Going with cool.")
+    print("We're not sure what you meant, going with cool.")
     body_style = "cool"
+# Prompt the user for a colour and validate it
+colour = input("Choose a colour for our clothes (hex code or named colour): ").lower().strip() or "cyan"
+strcolours = ["red", "yellow", "blue", "black", "grey", "gray", "silver", "white", "maroon", "olive", "lime", "teal",
+              "cyan", "navy", "purple"]
+if not strcolours.__contains__(colour) or not colour.startswith("#"):
+    colour = "cyan"
 
 # Set starting position for drawing bodies
 t.penup()
