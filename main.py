@@ -98,6 +98,34 @@ for person in range(2):
     t.forward(70)
     t.pendown()
 
+    if body_style == "buff":
+        old_position = t.pos()
+        old_colour = t.fillcolor()
+        if colour == "black":
+            t.pencolor("white")
+        else:
+            t.pencolor("black")
+
+        # get the turtle in pos to draw the abs
+        t.penup()
+        t.right(180)
+        t.forward(22)
+        t.left(180)
+        t.left(90)
+        t.forward(120)
+        t.right(90)
+        t.pendown()
+        t.left(90)
+        t.forward(60)
+        t.right(90)
+        t.penup()
+
+
+
+        t.penup()
+        t.setpos(old_position)
+        t.pendown()
+
     # Check if drawing a Tuxedo, if so, draw it
     if body_style == "tuxedo" or body_style == "tux":
         # Save current turtle position
