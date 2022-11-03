@@ -157,20 +157,16 @@ for person in range(2):
         t.pencolor(old_colour)
         t.pendown()
 
-    # Drawing eyes
+    # Draw the eyes
     t.pencolor("blue")
-
     t.circle(8)
-
     t.penup()
     t.right(180)
     t.forward(30)
     t.right(90)
     t.forward(10)
     t.pendown()
-
     t.circle(8)
-
     t.penup()
     t.forward(15)
     t.right(90)
