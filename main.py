@@ -55,10 +55,6 @@ if body_style != "tuxedo" and body_style != "tux" and body_style != "cool" and b
     body_style = "cool"
 # Prompt the user for a colour and validate it
 colour = input("Choose a colour for our clothes (hex code or named colour): ").lower().strip() or "cyan"
-strcolours = ["red", "yellow", "blue", "black", "grey", "gray", "silver", "white", "maroon", "olive", "lime", "teal",
-              "cyan", "navy", "purple"]
-if not strcolours.__contains__(colour) or not colour.startswith("#"):
-    colour = "cyan"
 
 # Set starting position for drawing bodies
 t.penup()
