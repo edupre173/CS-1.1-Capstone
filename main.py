@@ -94,6 +94,7 @@ for person in range(2):
     t.forward(70)
     t.pendown()
 
+    # Check if drawing abs, if so, draw em
     if body_style == "buff":
         old_position = t.pos()
         old_colour = t.fillcolor()
