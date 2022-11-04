@@ -147,7 +147,7 @@ for person in range(2):
         t.forward(30)
         t.left(180)
         t.forward(15)
-        # set the tertle nacl to old pos
+        # set the turtle nacl to old pos
 
         t.penup()
         t.setpos(old_position)
